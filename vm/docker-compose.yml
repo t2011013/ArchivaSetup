@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  archiva:
+    image: xetusoss/archiva:latest
+    volumes:
+      - type: volume
+        source: archiva-data-vol
+        target: /archiva-data
+    ports:
+      - '8080:8080'
+      - '443:443'
+    environment:
+      SMTP_HOST: ''
+
+volumes:
+  archiva-data-vol:
+  
